@@ -1,6 +1,6 @@
 # Unity_Projecte2
 
-  .-Projecte 2 és basa en realitzar un videojoc en el motor gràfic Unity.
+  .-Projecte 2 es basa en realitzar un videojoc en el motor gràfic Unity.
 
 # Memoria del Projecte
 
