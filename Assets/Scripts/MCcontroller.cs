@@ -15,6 +15,10 @@ public class MCcontroller : MonoBehaviour
     void Update()
     {
 
+
+
+
+
         Vector2 position= transform.position;
         float horizontal = Input.GetAxisRaw("Horizontal");
         float vertical = Input.GetAxisRaw("Vertical");
