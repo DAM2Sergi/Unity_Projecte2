@@ -14,9 +14,7 @@ public class MCcontroller : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-
         rigidbodyplayer = GetComponent<Rigidbody2D>();
-
     }
 
     // Update is called once per frame
@@ -26,7 +24,7 @@ public class MCcontroller : MonoBehaviour
         // Funcio al clicar la tecla espai saltara
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            rigidbodyplayer.Addforce(Vector2.up * jump, ForceMode2D.Impulse);
+            rigidbodyplayer.AddForce(new Vector2(0, 1) * jump, ForceMode2D.Impulse);
         }
 
 
