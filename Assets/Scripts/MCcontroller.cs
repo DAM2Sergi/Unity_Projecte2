@@ -23,6 +23,7 @@ public class MCcontroller : MonoBehaviour
     void Update()
     {
 
+        // Funcio al clicar la tecla espai saltara
         if (Input.GetKeyDown(KeyCode.Space))
         {
             rigidbodyplayer.Addforce(Vector2.up * jump, ForceMode2D.Impulse);
