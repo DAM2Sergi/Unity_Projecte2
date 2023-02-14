@@ -5,7 +5,7 @@ using UnityEngine;
 public class MCcontroller : MonoBehaviour
 {
 
-    //player movement settings
+    //Player movement settings
     public float speed = 2.0f;
     public float jump = 10f;
 
