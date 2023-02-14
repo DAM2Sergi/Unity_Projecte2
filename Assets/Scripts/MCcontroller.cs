@@ -4,10 +4,18 @@ using UnityEngine;
 
 public class MCcontroller : MonoBehaviour
 {
-    float speed = 2.0f;
+
+    //player movement settings
+    public float speed = 2.0f;
+    public float jump = 10f;
+
+    Rigidbody2D rigidbodyplayer;
+
     // Start is called before the first frame update
     void Start()
     {
+
+        rigidbodyplayer = GetComponent<Rigidbody2D>();
 
     }
 
@@ -15,11 +23,13 @@ public class MCcontroller : MonoBehaviour
     void Update()
     {
 
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            rigidbodyplayer.Addforce(Vector2.up * jump, ForceMode2D.Impulse);
+        }
 
 
-
-
-        Vector2 position= transform.position;
+        Vector2 position= rigidbodyplayer.position;
         float horizontal = Input.GetAxisRaw("Horizontal");
         float vertical = Input.GetAxisRaw("Vertical");
 
@@ -28,7 +38,7 @@ public class MCcontroller : MonoBehaviour
 
         position.x = position.x + speed * horizontal * Time.deltaTime;
         position.y = position.y + speed * vertical * Time.deltaTime;
-        transform.position = position;
+        rigidbodyplayer.MovePosition(position);
 
     }
 }
