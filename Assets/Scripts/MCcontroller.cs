@@ -27,7 +27,7 @@ public class MCcontroller : MonoBehaviour
 
 
         horizontal = Input.GetAxisRaw("Horizontal");//La funcio getAxisRaw canvia el valor de moviment de 0 a -1 de manera directa no gradual
-
+        
 
         if (Input.GetButtonDown("Jump") && IsGounded())
         {
