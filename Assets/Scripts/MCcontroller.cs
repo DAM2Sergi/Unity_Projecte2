@@ -6,38 +6,41 @@ public class MCcontroller : MonoBehaviour
 {
 
     //Player movement settings
-    public float speed = 2.0f;
-    public float jump = 10f;
+    private float horizontal;
 
-    Rigidbody2D rigidbodyplayer;
+    public float speed = 8.0f;
+    public float jump = 18f;
+
+    private Rigidbody2D rbPlayer;
 
     // Start is called before the first frame update
     void Start()
     {
-        rigidbodyplayer = GetComponent<Rigidbody2D>();
+        rbPlayer = GetComponent<Rigidbody2D>();
     }
 
     // Update is called once per frame
     void Update()
     {
 
-        // Funcio al clicar la tecla espai saltara
-        if (Input.GetKeyDown(KeyCode.Space))
+
+        horizontal = Input.GetAxisRaw("Horizontal");//La funcio getAxisRaw canvia el valor de moviment de 0 a -1 de manera directa no gradual
+
+
+        if (Input.GetButtonDown("Jump"))
         {
-            rigidbodyplayer.AddForce(new Vector2(0, 1) * jump, ForceMode2D.Impulse);
+            rbPlayer.velocity = new Vector2(rbPlayer.velocity.x, jump);
         }
 
 
-        Vector2 position= rigidbodyplayer.position;
-        float horizontal = Input.GetAxisRaw("Horizontal");
-        float vertical = Input.GetAxisRaw("Vertical");
-
-        //float horizontal = Input.GetAxis("Horizontal");
-        //float vertical = Input.GetAxis("Vertical");
-
-        position.x = position.x + speed * horizontal * Time.deltaTime;
-        position.y = position.y + speed * vertical * Time.deltaTime;
-        rigidbodyplayer.MovePosition(position);
-
     }
+
+    private void FixedUpdate()
+    {
+        rbPlayer.velocity = new Vector2(horizontal * speed, rbPlayer.velocity.y);
+    }
+
+
+
+
 }
