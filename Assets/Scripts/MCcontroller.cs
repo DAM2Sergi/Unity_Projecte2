@@ -7,9 +7,11 @@ public class MCcontroller : MonoBehaviour
 
     //Player movement settings
     private float horizontal;
-
     public float speed = 8.0f;
     public float jump = 18f;
+
+    //Lives
+    public int lives = 3;
 
     [SerializeField] private Rigidbody2D rbPlayer;
     [SerializeField] private Transform groundCheck;
