@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class MCcontroller : MonoBehaviour
 {
@@ -36,6 +37,10 @@ public class MCcontroller : MonoBehaviour
             rbPlayer.velocity = new Vector2(rbPlayer.velocity.x, jump);
         }
 
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 1);
+        }
 
     }
 
