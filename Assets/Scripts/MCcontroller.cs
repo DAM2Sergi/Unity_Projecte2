@@ -37,7 +37,7 @@ public class MCcontroller : MonoBehaviour
             rbPlayer.velocity = new Vector2(rbPlayer.velocity.x, jump);
         }
 
-        if (Input.GetKeyDown(KeyCode.Escape))
+        if (Input.GetKeyDown(KeyCode.P))
         {
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 1);
         }
