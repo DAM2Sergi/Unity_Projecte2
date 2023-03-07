@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class MCcontroller : MonoBehaviour
+public class mainController : MonoBehaviour
 {
 
     //Player movement settings

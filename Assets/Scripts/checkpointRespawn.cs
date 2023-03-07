@@ -2,11 +2,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class RespawnScript : MonoBehaviour
+public class checkpointRespawn : MonoBehaviour
 {
-    public GameObject player;
-    public GameObject respawnPoint;
+    private respawnKill respawn;
 
+    void Awake()
+    {
+        respawn = GameObject.FindGameObjectWithTag("Respawn").GetComponent<respawnKill>();
+    }
     // Start is called before the first frame update
     void Start()
     {
@@ -23,7 +26,7 @@ public class RespawnScript : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Player"))
         {
-            player.transform.position = respawnPoint.transform.position;
+            respawn.respawnPoint = this.gameObject;
         }
     }
 }

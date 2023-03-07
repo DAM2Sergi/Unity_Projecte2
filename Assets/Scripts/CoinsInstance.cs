@@ -2,18 +2,18 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CoinsInstance : MonoBehaviour
+public class coinsInstance : MonoBehaviour
 {
 
     void OnTriggerEnter2D(Collider2D other)
     {
-        MCcontroller controller = other.GetComponent<MCcontroller>();
+        mainController controller = other.GetComponent<mainController>();
 
         if (controller != null)
         {
             Destroy(gameObject);
         }
 
-        ScoreManager.instance.AddPoint();
+        scoreManager.instance.AddPoint();
     }
 }
