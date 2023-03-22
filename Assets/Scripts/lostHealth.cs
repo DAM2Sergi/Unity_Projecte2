@@ -5,13 +5,16 @@ using UnityEngine;
 public class lostHealth : MonoBehaviour
 {
 
-    private void OnTriggerStay2D(Collider2D other)
+    [SerializeField] Collider2D colider;
+
+    private void OnTriggerStay2D(Collider2D colider)
     {
-        mainController controller = other.GetComponent<mainController>();
+        mainController controller = colider.GetComponent<mainController>();
 
         if (controller != null)
         {
             controller.ChangeHealth();
         }
+        
     }
 }
