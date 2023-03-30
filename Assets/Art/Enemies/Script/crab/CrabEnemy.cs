@@ -2,11 +2,16 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class enemyController : MonoBehaviour
+public class CrabEnemy : MonoBehaviour
 {
 
     private SpriteRenderer sprite;
     public Animator animator;
+
+    
+    public float health = 12f;
+
+    GameObject mainController;
 
 
     [SerializeField] private Rigidbody2D rbenemy;
@@ -24,9 +29,10 @@ public class enemyController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        mainController = GameObject.Find("mainController");
         sprite = gameObject.GetComponent<SpriteRenderer>();
         rbenemy = GetComponent<Rigidbody2D>();
-
+        
     }
 
     
@@ -60,6 +66,22 @@ public class enemyController : MonoBehaviour
             rbenemy.transform.localScale=currentScale;
 
             checkwall=!checkwall;
+        }
+    }
+
+    void OnCollisionEnter2D(Collision2D mainColider)
+    {
+        hurt();
+    }
+
+    void hurt(){
+
+        health=health - 3f ;
+
+        if(!(health > 0f)){
+
+            Destroy(gameObject);
+               
         }
     }
 
