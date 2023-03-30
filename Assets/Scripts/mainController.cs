@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -29,6 +30,9 @@ public class mainController : MonoBehaviour
     [SerializeField] private Rigidbody2D rbPlayer;
     [SerializeField] private Transform groundCheck;
     [SerializeField] private LayerMask groundLayer;
+
+    //Player Death/ Game Over
+    //gameController gameController;
 
     // Start is called before the first frame update
     void Start()
@@ -99,6 +103,13 @@ public class mainController : MonoBehaviour
             }
 
         }
+
+        if (health == 0)
+        {
+            //gameController.GetComponent<gameController>().GameOver();
+            gameController.instance.GameOver();
+        }
+
     }
 
     public void ChangeHealth()

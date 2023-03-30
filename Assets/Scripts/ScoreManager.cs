@@ -10,7 +10,7 @@ public class scoreManager : MonoBehaviour
     public Text scoreText;
     public Text highscoreText;
 
-    int score = 0;
+    public int score = 0;
     int highscore = 0;
 
     private void Awake()
@@ -37,5 +37,11 @@ public class scoreManager : MonoBehaviour
             PlayerPrefs.SetInt("highscore", score);
         }
         
+    }
+
+    public int getScore()
+    {
+        Debug.Log(score);
+        return score;
     }
 }
