@@ -4,26 +4,18 @@ using UnityEngine;
 
 public class respawnKill : MonoBehaviour
 {
-    public GameObject player;
-    public GameObject respawnPoint;
-
-    // Start is called before the first frame update
-    void Start()
+    public GameObject player; //Obj jugador
+    public GameObject respawnPoint; //Obj el ultim punt de respawn
+    [SerializeField] Collider2D colider; //Colider de fi de mapa
+    
+    private void OnTriggerEnter2D(Collider2D colider)
     {
-        
-    }
+        mainController controller = colider.GetComponent<mainController>();
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
-    private void OnTriggerEnter2D(Collider2D other)
-    {
-        if (other.gameObject.CompareTag("Player"))
+        if (colider.gameObject.CompareTag("Player"))
         {
             player.transform.position = respawnPoint.transform.position;
+            controller.health--;
         }
     }
 }
