@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+
 public class BatEnemy : MonoBehaviour
 {
 
@@ -9,10 +10,19 @@ public class BatEnemy : MonoBehaviour
 
     GameObject mainController;
 
+    [SerializeField] public Transform playerCheck;
+
+
+    void void Awake()
+    {
+        playerCheck = GetComponent<Transform>()
+    }
 
     void Start()
     {
         mainController = GameObject.Find("mainController");
+
+        
         
     }
 
@@ -31,6 +41,8 @@ public class BatEnemy : MonoBehaviour
                
         }
     }
+
+
 
 
 }
