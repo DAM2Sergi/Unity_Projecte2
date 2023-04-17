@@ -3,27 +3,31 @@ using System.Collections.Generic;
 using UnityEngine;
 
 
+
 public class BatEnemy : MonoBehaviour
 {
+
 
     public float health = 9f;
 
     GameObject mainController;
 
-    [SerializeField] public Transform playerCheck;
+    [SerializeField] private Transform playerCheck;
+    [SerializeField] private LayerMask palyerLayer;
 
 
-    void void Awake()
+
+    void Awake()
     {
-        playerCheck = GetComponent<Transform>()
+
+
+        playerCheck = GetComponent<Transform>();
+       
     }
 
     void Start()
     {
         mainController = GameObject.Find("mainController");
-
-        
-        
     }
 
     void OnCollisionEnter2D(Collision2D mainColider)

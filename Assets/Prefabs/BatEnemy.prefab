@@ -298,6 +298,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 9
+  playerCheck: {fileID: 7679660579566854083}
+  palyerLayer:
+    serializedVersion: 2
+    m_Bits: 8
 --- !u!1 &8067489697568985179
 GameObject:
   m_ObjectHideFlags: 0
