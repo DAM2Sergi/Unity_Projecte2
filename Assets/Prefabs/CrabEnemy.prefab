@@ -89,8 +89,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 196394438373757295}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -7.56, y: -0.56, z: 0}
-  m_LocalScale: {x: 8, y: 8, z: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 196394437206082513}
   - {fileID: 196394437976984651}
@@ -111,7 +111,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.11039448, y: -0.0772209}
+  m_Offset: {x: -0.58239263, y: -0.6255015}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -120,9 +120,9 @@ BoxCollider2D:
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
-  m_AutoTiling: 1
+  m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.013913155, y: 0.07876289}
+  m_Size: {x: 0.7481326, y: 1.1753242}
   m_EdgeRadius: 0
 --- !u!61 &196394438373757284
 BoxCollider2D:
@@ -137,7 +137,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.033718586, y: -0.09568417}
+  m_Offset: {x: 0.35791934, y: -0.7631563}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -148,7 +148,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 1
   serializedVersion: 2
-  m_Size: {x: 0.11650753, y: 0.089448094}
+  m_Size: {x: 1.1463215, y: 0.8713441}
   m_EdgeRadius: 0
 --- !u!50 &196394438373757283
 Rigidbody2D:
@@ -197,6 +197,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   animator: {fileID: 1776023034825815128}
+  health: 12
   rbenemy: {fileID: 196394438373757283}
   hurtBox: {fileID: 196394438373757284}
   fallCheck: {fileID: 196394437976984651}
@@ -233,7 +234,7 @@ Transform:
   m_GameObject: {fileID: 2895982431250511723}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 8, y: 8, z: 1}
   m_Children: []
   m_Father: {fileID: 196394438373757282}
   m_RootOrder: 2
@@ -295,8 +296,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: -534732583
+  m_SortingLayer: 5
   m_SortingOrder: 0
   m_Sprite: {fileID: 6197056623017412966, guid: 25e3c3e2a286eee48bba19e8d339e062, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}

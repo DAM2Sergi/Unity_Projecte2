@@ -39,9 +39,24 @@ TagManager:
   - 
   - 
   m_SortingLayers:
-  - name: Background
-    uniqueID: 2153170581
-    locked: 0
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: bg_img
+    uniqueID: 2153170581
+    locked: 0
+  - name: bg_decoration
+    uniqueID: 963843159
+    locked: 0
+  - name: props
+    uniqueID: 3314856077
+    locked: 0
+  - name: ground
+    uniqueID: 3582035981
+    locked: 0
+  - name: enemys
+    uniqueID: 3760234713
+    locked: 0
+  - name: player
+    uniqueID: 2187750063
     locked: 0
