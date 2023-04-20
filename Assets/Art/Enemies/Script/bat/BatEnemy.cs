@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+// using IAstarAI;
 
 
 
@@ -15,11 +16,10 @@ public class BatEnemy : MonoBehaviour
     [SerializeField] private Transform playerCheck;
     [SerializeField] private LayerMask palyerLayer;
 
-
-
     void Awake()
     {
 
+        // Debug.Log(Pathfinding.canMove);
 
         playerCheck = GetComponent<Transform>();
        
