@@ -10,6 +10,12 @@ public class EnemyAI : MonoBehaviour
     public float speed = 200f;
     public float nextWaypointDistance = 3f;
 
+
+    [SerializeField] public Transform playerCheck;
+    [SerializeField] public LayerMask playerLayer;
+
+
+
     public Transform enemyGFX;
 
     Path path;
@@ -20,6 +26,13 @@ public class EnemyAI : MonoBehaviour
     Rigidbody2D rb;
 
     // Start is called before the first frame update
+
+    bool playerFollow(){
+
+        return Physics2D.OverlapCircle(playerCheck.position, 20f, playerLayer);
+
+    }
+
     void Start()
     {
         seeker = GetComponent<Seeker>();
@@ -27,12 +40,13 @@ public class EnemyAI : MonoBehaviour
 
         InvokeRepeating("UpdatePath", 0f, .5f);
 
+        
     }
+
 
     void UpdatePath()
     {
-        if (seeker.IsDone())
-                seeker.StartPath(rb.position, target.position, OnPathComplete);
+        if (seeker.IsDone()&&playerFollow())seeker.StartPath(rb.position, target.position, OnPathComplete);
     }
 
     void OnPathComplete(Path p)
@@ -72,18 +86,18 @@ public class EnemyAI : MonoBehaviour
             currentWaypoint++;
         }
 
-        if (rb.velocity.x >= 0.01f)
+        if (rb.velocity.x >= Mathf.Epsilon)
         {
 
-            enemyGFX.localScale = new Vector3(1f, 1f, 1f);
-            //Que es Mathf.Epsilon?¿
+            enemyGFX.localScale = new Vector3(4f, 4f, 1f);
+            //Que es Mathf.Epsilon?
             //El numero mes petit float diferent a zero 
 
         }
-        else if (rb.velocity.x <= -0.01f)
+        else if (rb.velocity.x <= -Mathf.Epsilon)
         {
 
-            enemyGFX.localScale = new Vector3(-1f, 1f, 1f);
+            enemyGFX.localScale = new Vector3(-4f, 4f, 1f);
 
         };
     }
