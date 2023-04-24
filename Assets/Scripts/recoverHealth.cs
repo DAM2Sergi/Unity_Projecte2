@@ -10,9 +10,10 @@ public class recoverHealth : MonoBehaviour
 
         if (controller != null)
         {
+            controller.health++;
             Destroy(gameObject);
         }
 
-        controller.health++;
+        
     }
 }
