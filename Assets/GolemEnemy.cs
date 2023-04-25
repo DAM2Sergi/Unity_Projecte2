@@ -4,28 +4,43 @@ using UnityEngine;
 
 public class GolemEnemy : MonoBehaviour
 {
-    // Start is called before the first frame update
 
 
-    Ray ray;
+    public GameObject raycast;
 
-
+    Rigidbody2D rb2D;
 
 
     void Start()
     {
-        ray= new Ray(transform.position, transform.forward);
-        
+
+        rb2D = GetComponent<Rigidbody2D>();
+
     }
 
-
-
-    // Update is called once per frame
     void Update()
     {
-        if(Physics.Raycast(ray, out RaycastHit hit))
-        {
-            Debug.Log(hit.collider.gameObject.name+"li ha diant un raycast");
+
+    }
+
+
+    void FixedUpdate()
+    {
+        if(CheckPlayer()){
+            
+        }
+
+    }
+
+    bool CheckPlayer(){
+        RaycastHit2D hit = Physics2D.Raycast(raycast.transform.position, new Vector3(1,0,0), LayerMask.GetMask("Player"), 20);
+
+        if (hit.collider != null){
+            return true;
+        }else{
+             return false;
         }
     }
+
+
 }
