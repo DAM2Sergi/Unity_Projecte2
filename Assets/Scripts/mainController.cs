@@ -106,8 +106,8 @@ public class mainController : MonoBehaviour
 
         if (health == 0)
         {
-            //gameController.GetComponent<gameController>().GameOver();
-            gameController.instance.GameOver();
+            // gameController.GetComponent<gameController>().GameOver();
+            // gameController.Setup();
         }
 
     }

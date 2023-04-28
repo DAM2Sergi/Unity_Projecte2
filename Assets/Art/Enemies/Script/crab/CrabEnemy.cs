@@ -64,7 +64,7 @@ public class CrabEnemy : MonoBehaviour
             Vector3 currentScale = rbenemy.transform.localScale;
             currentScale.x *= -1;
             rbenemy.transform.localScale=currentScale;
-
+            
             checkwall=!checkwall;
         }
     }

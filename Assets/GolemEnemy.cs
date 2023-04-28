@@ -5,42 +5,38 @@ using UnityEngine;
 public class GolemEnemy : MonoBehaviour
 {
 
+    public float speed= 2.5f;
+    public int life= 30;
 
-    public GameObject raycast;
-
-    Rigidbody2D rb2D;
+    [SerializeField] private Rigidbody2D rb2d;
+    [SerializeField] private Transform enemyGFX;
+    [SerializeField] Transform wallCheck;
+    [SerializeField] LayerMask wallLayer;
 
 
     void Start()
     {
-
-        rb2D = GetComponent<Rigidbody2D>();
-
+        rb2d = GetComponent<Rigidbody2D>();
     }
 
     void Update()
     {
+        
 
+        patrolEnemy();
+        rb2d.velocity = new Vector2(speed, rb2d.velocity.y);
+        
     }
 
+    private void patrolEnemy(){   
 
-    void FixedUpdate()
-    {
-        if(CheckPlayer()){
+        if(Physics2D.OverlapCircle(wallCheck.position, 0.3f, wallLayer)){
             
+            Vector3 currentScale = rb2d.transform.localScale;
+            currentScale.x *= -1;
+            rb2d.transform.localScale=currentScale;
         }
 
     }
-
-    bool CheckPlayer(){
-        RaycastHit2D hit = Physics2D.Raycast(raycast.transform.position, new Vector3(1,0,0), LayerMask.GetMask("Player"), 20);
-
-        if (hit.collider != null){
-            return true;
-        }else{
-             return false;
-        }
-    }
-
 
 }

@@ -197,8 +197,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b38a1f41c93ad2b40b794be2432fdf0f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  raydistance: 20
-  raycast: {fileID: 4559192133416305912}
+  raycast: {fileID: 6255391241147759077}
 --- !u!1 &6255391241147759077
 GameObject:
   m_ObjectHideFlags: 0
