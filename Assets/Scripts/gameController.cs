@@ -13,10 +13,12 @@ public class gameController : MonoBehaviour
     private void Awake()
     {
         instance = this;
+        Debug.Log(instance);
     }
 
     public void GameOver()
     {
+        
         scoreManager.instance.getScore();
 
         //int currentHealth = controller.health;
@@ -25,7 +27,6 @@ public class gameController : MonoBehaviour
         //int puntuacio = scoreManager.score;
 
         int score = Convert.ToInt32(scoreManager);
-        Debug.Log(score);
-        gameOverScreen.instance.Setup(score);
+        gameOverScreen.Setup();
     }
 }

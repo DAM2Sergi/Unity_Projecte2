@@ -32,7 +32,7 @@ public class mainController : MonoBehaviour
     [SerializeField] private LayerMask groundLayer;
 
     //Player Death/ Game Over
-    //gameController gameController;
+    public gameOverScreen overScreen;
 
     // Start is called before the first frame update
     void Start()
@@ -106,8 +106,9 @@ public class mainController : MonoBehaviour
 
         if (health == 0)
         {
-            // gameController.GetComponent<gameController>().GameOver();
-            // gameController.Setup();
+            Debug.Log("mort");
+            speed=0;
+            overScreen.Setup();
         }
 
     }

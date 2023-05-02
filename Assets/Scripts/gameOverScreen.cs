@@ -8,21 +8,15 @@ public class gameOverScreen : MonoBehaviour
     public static gameOverScreen instance;
 
     public Text pointsText;
-    public int finalscore;
-
-    private void Awake()
-    {
-        instance = this;
-    }
+    public Text finalscore;
 
     public void setScore(int score)
     {
-        finalscore = score;
+        finalscore.text = score.ToString();
     }
 
-    public void Setup(int score)
+    public void Setup()
     {
-        gameObject.SetActive(false);
-        pointsText.text = score.ToString() + " POINTS";
+        gameObject.SetActive(true);
     }
 }
