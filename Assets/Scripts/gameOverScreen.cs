@@ -22,7 +22,7 @@ public class gameOverScreen : MonoBehaviour
 
     public void Setup(int score)
     {
-        gameObject.SetActive(true);
+        gameObject.SetActive(false);
         pointsText.text = score.ToString() + " POINTS";
     }
 }
