@@ -329,8 +329,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eb096a35ceeb6e5498460d605a0804b6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  scoreText: {fileID: 1372753276}
-  highscoreText: {fileID: 2010951550}
 --- !u!1001 &36896931
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1254,7 +1252,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 316171542}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 612765201}
+        m_TargetAssemblyTypeName: gameOverScreen, Assembly-CSharp
+        m_MethodName: ExitButton
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &316171542
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1310,7 +1320,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &334055943
 RectTransform:
   m_ObjectHideFlags: 0
@@ -75963,7 +75973,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1297318691
 RectTransform:
   m_ObjectHideFlags: 0
@@ -77101,7 +77111,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1848874050}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 612765201}
+        m_TargetAssemblyTypeName: gameOverScreen, Assembly-CSharp
+        m_MethodName: RestartButton
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1848874050
 MonoBehaviour:
   m_ObjectHideFlags: 0
