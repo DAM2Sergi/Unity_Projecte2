@@ -6,12 +6,18 @@ public class GolemEnemy : MonoBehaviour
 {
 
     public float speed= 2.5f;
-    public int life= 30;
+    private int life= 30;
+    private float range= 15f;
 
-    [SerializeField] private Rigidbody2D rb2d;
-    [SerializeField] private Transform enemyGFX;
-    [SerializeField] Transform wallCheck;
-    [SerializeField] LayerMask wallLayer;
+
+
+    public Transform player;
+    public Transform golem;
+    public Transform golemGFX;
+    public Rigidbody2D rb2d;
+    public Transform wallCheck;
+    public LayerMask wallLayer;
+
 
 
     void Start()
@@ -21,22 +27,38 @@ public class GolemEnemy : MonoBehaviour
 
     void Update()
     {
-        
-
-        patrolEnemy();
-        rb2d.velocity = new Vector2(speed, rb2d.velocity.y);
-        
-    }
-
-    private void patrolEnemy(){   
-
-        if(Physics2D.OverlapCircle(wallCheck.position, 0.3f, wallLayer)){
+        //detecta el el jugador si esta dins del rang
+        if(range>Vector2.Distance(player.position,golem.position)){
             
-            Vector3 currentScale = rb2d.transform.localScale;
-            currentScale.x *= -1;
-            rb2d.transform.localScale=currentScale;
+            Debug.Log("Soc dins del rang");
+
+        }else{
+            life=30;
         }
 
+        
+    }
+    void FixedUpdate()
+    {
+        if(Physics2D.OverlapCircle(wallCheck.position, 0.2f, wallLayer)){
+           checkwall=!checkwall;
+        }
+
+    }
+
+    void flipEnemy(){
+        if (rb2d.velocity.x >= Mathf.Epsilon)
+        {
+
+            golemGFX.localScale = new Vector3(8f, 8f, 1f);
+
+        }
+        else if (rb2d.velocity.x <= -Mathf.Epsilon)
+        {
+
+            golemGFX.localScale = new Vector3(-8f, 8f, 1f);
+
+        };
     }
 
 }

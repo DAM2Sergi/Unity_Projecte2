@@ -24,7 +24,7 @@ public class CrabEnemy : MonoBehaviour
     
 
     public float speed = 3.0f;
-    public bool checkwall = false;
+    public bool checkwall = true;
 
     // Start is called before the first frame update
     void Start()
