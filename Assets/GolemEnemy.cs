@@ -7,9 +7,12 @@ public class GolemEnemy : MonoBehaviour
 
     public float speed= 2.5f;
     private int life= 30;
-    private float range= 15f;
+    private float attackRange= 2.5f;
+    private float burstcooldown= 10f;
 
 
+    public GameObject golemObj;
+    public GameObject  attackBust;
 
     public Transform player;
     public Transform golem;
@@ -18,49 +21,44 @@ public class GolemEnemy : MonoBehaviour
     public Transform wallCheck;
     public LayerMask wallLayer;
 
-
+    public bool checkwall = true;
 
     void Start()
     {
         rb2d = GetComponent<Rigidbody2D>();
+
     }
 
     void Update()
     {
-        //detecta el el jugador si esta dins del rang
-        if(range>Vector2.Distance(player.position,golem.position)){
-            
 
-
-        }else{
-            life=30;
-        }
-
+        Vector2 directionTranslation = (checkwall) ? transform.right : -transform.right; 
+        directionTranslation *= Time.deltaTime * speed;
+        transform.Translate(directionTranslation);
         
+        patrolEnemy();
+
+        useAbility();
     }
-    void FixedUpdate()
+    void patrolEnemy()
     {
         if(Physics2D.OverlapCircle(wallCheck.position, 0.2f, wallLayer)){
+            Vector3 currentScale = rb2d.transform.localScale;
+            currentScale.x *= -1;
+            rb2d.transform.localScale=currentScale;
 
-            
-
+            checkwall=!checkwall;
         }
-
     }
 
-    void flipEnemy(){//Falta ficar-ho a el obj de grafic
-        if (rb2d.velocity.x >= Mathf.Epsilon)
-        {
+    void useAbility()
+    {
+        //detecta el el jugador si esta dins del rang
+        if(attackRange>Vector2.Distance(player.position,golem.position)){
+            attackBust.SetActive(true);
 
-            golemGFX.localScale = new Vector3(8f, 8f, 1f);
-
+        }else{
+            attackBust.SetActive(false);
         }
-        else if (rb2d.velocity.x <= -Mathf.Epsilon)
-        {
-
-            golemGFX.localScale = new Vector3(-8f, 8f, 1f);
-
-        };
     }
-
 }
