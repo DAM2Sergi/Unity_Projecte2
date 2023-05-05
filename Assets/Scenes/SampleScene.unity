@@ -505,7 +505,7 @@ MonoBehaviour:
   groundCheck: {fileID: 1895211608}
   groundLayer:
     serializedVersion: 2
-    m_Bits: 64
+    m_Bits: 192
   overScreen: {fileID: 612765201}
 --- !u!50 &99934547
 Rigidbody2D:
@@ -726,9 +726,17 @@ PrefabInstance:
       propertyPath: wallLayer.m_Bits
       value: 64
       objectReference: {fileID: 0}
+    - target: {fileID: 150563292215036536, guid: 1b90cfbbad02a8a4bb488cfffb4bc5ac, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 150563292287090195, guid: 1b90cfbbad02a8a4bb488cfffb4bc5ac, type: 3}
       propertyPath: m_Name
       value: GolemEnemy
+      objectReference: {fileID: 0}
+    - target: {fileID: 150563292287090195, guid: 1b90cfbbad02a8a4bb488cfffb4bc5ac, type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 150563292287090196, guid: 1b90cfbbad02a8a4bb488cfffb4bc5ac, type: 3}
       propertyPath: m_RootOrder
@@ -781,6 +789,10 @@ PrefabInstance:
     - target: {fileID: 6255391241147759077, guid: 1b90cfbbad02a8a4bb488cfffb4bc5ac, type: 3}
       propertyPath: m_Name
       value: wallcheck
+      objectReference: {fileID: 0}
+    - target: {fileID: 6255391241147759077, guid: 1b90cfbbad02a8a4bb488cfffb4bc5ac, type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1b90cfbbad02a8a4bb488cfffb4bc5ac, type: 3}
@@ -75500,6 +75512,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 196394437206082512, guid: 67bfcf446f15cfb409dc82914b60f234, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 196394437976984650, guid: 67bfcf446f15cfb409dc82914b60f234, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 196394438373757282, guid: 67bfcf446f15cfb409dc82914b60f234, type: 3}
       propertyPath: m_RootOrder
       value: 1
@@ -75547,6 +75567,14 @@ PrefabInstance:
     - target: {fileID: 196394438373757295, guid: 67bfcf446f15cfb409dc82914b60f234, type: 3}
       propertyPath: m_Name
       value: CrabEnemy (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 196394438373757295, guid: 67bfcf446f15cfb409dc82914b60f234, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 2895982431250511723, guid: 67bfcf446f15cfb409dc82914b60f234, type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 67bfcf446f15cfb409dc82914b60f234, type: 3}
@@ -76890,6 +76918,10 @@ PrefabInstance:
       propertyPath: target
       value: 
       objectReference: {fileID: 99934545}
+    - target: {fileID: 7249672600488673581, guid: a9e5c733757cb374482b5b4cfda3fa8b, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 7249672601012809377, guid: a9e5c733757cb374482b5b4cfda3fa8b, type: 3}
       propertyPath: m_Enabled
       value: 1
@@ -76945,6 +76977,14 @@ PrefabInstance:
     - target: {fileID: 7249672601012809406, guid: a9e5c733757cb374482b5b4cfda3fa8b, type: 3}
       propertyPath: m_Name
       value: BatEnemy
+      objectReference: {fileID: 0}
+    - target: {fileID: 7249672601012809406, guid: a9e5c733757cb374482b5b4cfda3fa8b, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 8067489697568985179, guid: a9e5c733757cb374482b5b4cfda3fa8b, type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a9e5c733757cb374482b5b4cfda3fa8b, type: 3}
@@ -78026,6 +78066,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 196394437206082512, guid: 67bfcf446f15cfb409dc82914b60f234, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 196394437976984650, guid: 67bfcf446f15cfb409dc82914b60f234, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 196394438373757282, guid: 67bfcf446f15cfb409dc82914b60f234, type: 3}
       propertyPath: m_RootOrder
       value: 19
@@ -78073,6 +78121,14 @@ PrefabInstance:
     - target: {fileID: 196394438373757295, guid: 67bfcf446f15cfb409dc82914b60f234, type: 3}
       propertyPath: m_Name
       value: CrabEnemy
+      objectReference: {fileID: 0}
+    - target: {fileID: 196394438373757295, guid: 67bfcf446f15cfb409dc82914b60f234, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 2895982431250511723, guid: 67bfcf446f15cfb409dc82914b60f234, type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 67bfcf446f15cfb409dc82914b60f234, type: 3}

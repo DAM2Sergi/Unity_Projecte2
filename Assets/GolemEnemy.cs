@@ -30,7 +30,7 @@ public class GolemEnemy : MonoBehaviour
         //detecta el el jugador si esta dins del rang
         if(range>Vector2.Distance(player.position,golem.position)){
             
-            Debug.Log("Soc dins del rang");
+
 
         }else{
             life=30;
@@ -41,12 +41,14 @@ public class GolemEnemy : MonoBehaviour
     void FixedUpdate()
     {
         if(Physics2D.OverlapCircle(wallCheck.position, 0.2f, wallLayer)){
-           checkwall=!checkwall;
+
+            
+
         }
 
     }
 
-    void flipEnemy(){
+    void flipEnemy(){//Falta ficar-ho a el obj de grafic
         if (rb2d.velocity.x >= Mathf.Epsilon)
         {
 
