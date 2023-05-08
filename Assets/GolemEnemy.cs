@@ -4,16 +4,26 @@ using UnityEngine;
 
 public class GolemEnemy : MonoBehaviour
 {
+    public GameObject golemObj;
 
+    //Stats
     public float speed= 2.5f;
     private int life= 30;
+
+    //Attack Explosion
     private float attackRange= 2.5f;
-    private float burstcooldown= 10f;
+    private float nextAbility;
+    private float cooldownAbility= 12f;
 
+    private bool casting=false;
 
-    public GameObject golemObj;
     public GameObject  attackBust;
 
+    //Attack AssaultJump 
+
+    public GameObject playerRay;
+
+    //Golem Components
     public Transform player;
     public Transform golem;
     public Transform golemGFX;
@@ -31,17 +41,20 @@ public class GolemEnemy : MonoBehaviour
 
     void Update()
     {
-
-        Vector2 directionTranslation = (checkwall) ? transform.right : -transform.right; 
-        directionTranslation *= Time.deltaTime * speed;
-        transform.Translate(directionTranslation);
-        
         patrolEnemy();
-
-        useAbility();
+        burstAbility();
     }
+
     void patrolEnemy()
     {
+    
+        if(!isCasting()){
+            Vector2 directionTranslation = (checkwall) ? transform.right : -transform.right;
+            directionTranslation *= Time.deltaTime * speed;
+            transform.Translate(directionTranslation);
+        }
+
+
         if(Physics2D.OverlapCircle(wallCheck.position, 0.2f, wallLayer)){
             Vector3 currentScale = rb2d.transform.localScale;
             currentScale.x *= -1;
@@ -51,14 +64,51 @@ public class GolemEnemy : MonoBehaviour
         }
     }
 
-    void useAbility()
+    bool isCasting(){
+        if(casting == true){
+            return true;
+        }else if(casting ==false){
+            return false;
+        }
+        return false;
+    }
+
+    bool cooldownCalc(float cooldownAbility)
     {
-        //detecta el el jugador si esta dins del rang
-        if(attackRange>Vector2.Distance(player.position,golem.position)){
+        
+        if(Time.time>nextAbility)
+        {
+            nextAbility=Time.time+cooldownAbility;            
+            return true;
+
+        }else{
+            return false;
+        }
+        
+    }
+
+    void burstAbility()
+    {
+        //Detecta el el jugador si esta dins del rang
+        if(attackRange>Vector2.Distance(player.position,golem.position) && cooldownCalc(cooldownAbility)){
             attackBust.SetActive(true);
+            casting=true;
 
         }else{
             attackBust.SetActive(false);
+            casting=false;
         }
+    }
+    
+    void assaultAbility(){
+
+        if(burstAbility(15f)&& playerCheck()){
+            speed=20;
+        }
+
+    }
+
+    bool playerCheck(){
+        return true;
     }
 }
