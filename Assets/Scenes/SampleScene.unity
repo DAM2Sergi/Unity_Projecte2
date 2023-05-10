@@ -722,6 +722,10 @@ PrefabInstance:
       propertyPath: playerRay
       value: 
       objectReference: {fileID: 915484248}
+    - target: {fileID: 941735948, guid: 1b90cfbbad02a8a4bb488cfffb4bc5ac, type: 3}
+      propertyPath: playerLayer.m_Bits
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 150563292287090195, guid: 1b90cfbbad02a8a4bb488cfffb4bc5ac, type: 3}
       propertyPath: m_Name
       value: GolemEnemy
