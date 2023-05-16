@@ -28,8 +28,12 @@ public class mainController : MonoBehaviour
 
 
     [SerializeField] private Rigidbody2D rbPlayer;
+    [SerializeField] private SpriteRenderer PlayerGFX;
+    [SerializeField] private Transform PlayerLocation;
     [SerializeField] private Transform groundCheck;
     [SerializeField] private LayerMask groundLayer;
+    [SerializeField] private Animator animator;
+
 
     //Player Death/ Game Over
     public gameOverScreen overScreen;
@@ -38,13 +42,16 @@ public class mainController : MonoBehaviour
     void Start()
     {
         rbPlayer = GetComponent<Rigidbody2D>();
+        animator = GetComponent<Animator>();
+        PlayerGFX = GetComponent<SpriteRenderer>();
+        PlayerLocation = GetComponent<Transform>();
     }
 
     // Update is called once per frame
     void Update()
     {
 
-
+        animator.Play("Player_idle");
         horizontal = Input.GetAxisRaw("Horizontal");//La funcio getAxisRaw canvia el valor de moviment de 0 a -1 de manera directa no gradual
         
 
@@ -137,9 +144,26 @@ public class mainController : MonoBehaviour
     private void FixedUpdate()
     {
         rbPlayer.velocity = new Vector2(horizontal * speed, rbPlayer.velocity.y);
+        flipPlayer();
+        
     }
 
+    private void flipPlayer(){
+        if (rbPlayer.velocity.x >= Mathf.Epsilon)
+        {
 
+            PlayerLocation.localScale = new Vector3(1.2f, 1.4f, 1f);
+            //Que es Mathf.Epsilon?
+            //El numero mes petit float diferent a zero 
+
+        }
+        else if (rbPlayer.velocity.x <= -Mathf.Epsilon)
+        {
+
+            PlayerLocation.localScale = new Vector3(-1.2f, 1.4f, 1f);
+
+        };
+    }
 
 
 }

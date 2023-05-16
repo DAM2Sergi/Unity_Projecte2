@@ -18,14 +18,6 @@ public class GolemEnemy : MonoBehaviour
     private float cooldownAbility = 20f;
 
     //Attack AssaultJump 
-
-    GameObject playerRay=GameObject.FindGameObjectWithTag("playerRay");
-
-    // Calculate the direction of the ray.
-    Vector2 direction = playerRay.transform.forward;
-    
-    // Perform the raycast.
-    RaycastHit2D hit = Physics2D.Raycast(playerRay.transform.position, direction, 1f, playerLayer);
     
 
     //Golem Components
