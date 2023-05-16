@@ -7,8 +7,8 @@ public class scoreManager : MonoBehaviour
 {
     public static scoreManager instance;
 
-    public Text scoreText;
-    public Text highscoreText;
+    private Text scoreText;
+    private Text highscoreText;
 
     int score = 0;
     int highscore = 0;
@@ -20,6 +20,10 @@ public class scoreManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+
+        scoreText = GetComponentInChildren<Text>();
+        highscoreText = GetComponentInChildren<Text>();
+
         highscore = PlayerPrefs.GetInt("highscore", 0);
 
         scoreText.text = score.ToString() + " POINTS";
