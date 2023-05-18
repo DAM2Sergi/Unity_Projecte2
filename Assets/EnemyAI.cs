@@ -24,6 +24,7 @@ public class EnemyAI : MonoBehaviour
 
     Seeker seeker;
     Rigidbody2D rb;
+    public Animator animator;
 
     // Start is called before the first frame update
 
@@ -37,6 +38,7 @@ public class EnemyAI : MonoBehaviour
     {
         seeker = GetComponent<Seeker>();
         rb = GetComponent<Rigidbody2D>();
+        animator = GetComponentInChildren<Animator>();
 
         InvokeRepeating("UpdatePath", 0f, 0.5f);
 
