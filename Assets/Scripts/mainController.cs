@@ -10,7 +10,7 @@ public class mainController : MonoBehaviour
 
     //Player movement settings
     private float horizontal;
-    public float speed = 8.0f;
+    public float speed = 8f;
     public float jump = 18f;
 
     //Lives
@@ -51,13 +51,16 @@ public class mainController : MonoBehaviour
     void Update()
     {
 
-        animator.Play("Player_idle");
+        
         horizontal = Input.GetAxisRaw("Horizontal");//La funcio getAxisRaw canvia el valor de moviment de 0 a -1 de manera directa no gradual
         
+        animator.SetFloat("Horizontal", Mathf.Abs(horizontal));
+        animator.SetBool("Ground", IsGounded());
 
         if (Input.GetButtonDown("Jump") && IsGounded())
         {
             rbPlayer.velocity = new Vector2(rbPlayer.velocity.x, jump);
+            
         }
 
         if (Input.GetKeyDown(KeyCode.P))
@@ -69,8 +72,7 @@ public class mainController : MonoBehaviour
         if (isInvincible)
         {
             invincibleTimer -= Time.deltaTime;
-            if (invincibleTimer < 0)
-                isInvincible = false;
+            if (invincibleTimer < 0)isInvincible = false;
         }
 
 
@@ -137,7 +139,8 @@ public class mainController : MonoBehaviour
 
     private bool IsGounded()
     {
-        return Physics2D.OverlapCircle(groundCheck.position, 0.1f, groundLayer);
+        bool isGround = Physics2D.OverlapCircle(groundCheck.position, 0.1f, groundLayer);
+        return isGround;
     }
 
 
