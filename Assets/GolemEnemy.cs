@@ -8,7 +8,7 @@ public class GolemEnemy : MonoBehaviour
 
     //Stats
     public float speed= 2.5f;
-    private int life= 30;
+    private float life= 30;
 
     //Attack Explosion
     public GameObject  attackBust;
@@ -34,6 +34,7 @@ public class GolemEnemy : MonoBehaviour
     void Start()
     {
         rb2d = GetComponent<Rigidbody2D>();
+        
 
     }
 
@@ -82,4 +83,20 @@ public class GolemEnemy : MonoBehaviour
         attackBust.SetActive(false);
     }
     
+    void OnCollisionEnter2D(Collision2D mainColider)
+    {
+        hurt();
+    }
+
+    void hurt(){
+
+        life=life - 3f ;
+        Debug.Log(life);
+
+        if(!(life > 0f)){
+
+            Destroy(gameObject);
+               
+        }
+    }
 }
