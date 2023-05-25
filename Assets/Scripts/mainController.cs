@@ -65,7 +65,12 @@ public class mainController : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.P))
         {
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 1);
+            Time.timeScale = 0;
+        }
+
+        if (Input.GetKeyDown(KeyCode.R))
+        {
+            Time.timeScale = 1;
         }
 
 
@@ -74,6 +79,8 @@ public class mainController : MonoBehaviour
             invincibleTimer -= Time.deltaTime;
             if (invincibleTimer < 0)isInvincible = false;
         }
+
+        
 
 
         Health();
