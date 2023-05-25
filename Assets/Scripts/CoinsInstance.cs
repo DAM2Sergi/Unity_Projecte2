@@ -12,7 +12,7 @@ public class coinsInstance : MonoBehaviour
         if (controller != null)
         {
             Destroy(gameObject);
-            scoreManager.instance.AddPoint();
+            ScoreManager.instance.AddPoint();
         }
 
         

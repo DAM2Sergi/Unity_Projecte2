@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 196394437206082513}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: WallCheck
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -39,7 +39,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 196394437976984651}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: FallCheck
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -74,7 +74,7 @@ GameObject:
   - component: {fileID: 196394438373757283}
   - component: {fileID: 196394438373757286}
   - component: {fileID: 196394438373757287}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: CrabEnemy
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -218,7 +218,7 @@ GameObject:
   - component: {fileID: 9026860313773126349}
   - component: {fileID: 1776023034825815128}
   - component: {fileID: 1471623184786760844}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Crab_GFX
   m_TagString: Untagged
   m_Icon: {fileID: 0}

@@ -8,7 +8,7 @@ public class gameController : MonoBehaviour
     public static gameController instance;
 
     gameOverScreen gameOverScreen;
-    scoreManager scoreManager;
+    ScoreManager scoreManager;
 
     private void Awake()
     {
@@ -19,7 +19,7 @@ public class gameController : MonoBehaviour
     public void GameOver()
     {
         
-        scoreManager.instance.getScore();
+        ScoreManager.instance.getScore();
 
         //int currentHealth = controller.health;
 
