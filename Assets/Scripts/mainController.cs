@@ -37,6 +37,8 @@ public class mainController : MonoBehaviour
 
     //Player Death/ Game Over
     public gameOverScreen overScreen;
+    //Player Death/ Game Over
+    public gamePauseScreen pauseScreen;
 
     // Start is called before the first frame update
     void Start()
@@ -66,11 +68,14 @@ public class mainController : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.P))
         {
             Time.timeScale = 0;
+            pauseScreen.Setup();
         }
 
         if (Input.GetKeyDown(KeyCode.R))
         {
             Time.timeScale = 1;
+            pauseScreen.unSetup();
+            
         }
 
 
